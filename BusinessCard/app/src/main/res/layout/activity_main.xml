@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+
+            tools:context="com.example.essian.businesscard.MainActivity">
+
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sewing" />
+
+            <TextView
+                android:id="@+id/titleline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/main_image"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="TC's Alterations"
+                android:textColor="@color/colorAccent"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_image"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="Tailoring exquisite outfits since 2001"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/DetailText"
+                android:layout_below="@id/description"
+                android:text="10 Bridge End\nLeeds\nLS1 1PR"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/address"
+                android:layout_below="@id/description"
+                android:src="@drawable/ic_location_on_black_24dp"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/phone"
+                style="@style/DetailText"
+                android:layout_below="@id/address"
+                android:paddingTop="28dp"
+                android:paddingBottom="16dp"
+                android:text="0113-244-6587" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/phone"
+                android:layout_below="@id/address"
+                android:paddingTop="28dp"
+                android:src="@drawable/ic_phone_black_24dp"
+                android:tint="@color/colorPrimary" />
+
+
+        </RelativeLayout>
+    </TableLayout>
+</ScrollView>
