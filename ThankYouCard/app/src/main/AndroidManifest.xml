@@ -17,4 +17,8 @@
         </activity>
     </application>
 
+    <supports-screens android:resizeable="true"
+
+    android:requiresSmallestWidthDp="320"
+    />
 </manifest>
