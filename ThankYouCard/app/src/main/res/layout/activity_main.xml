@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.8"
+        android:contentDescription="Balancing on a slackline"
         android:scaleType="centerCrop"
-        android:src="@drawable/slackline"
-        android:contentDescription="Balancing on a slackline"/>
+        android:src="@drawable/slackline"/>
 
     <TextView
         android:layout_width="wrap_content"
