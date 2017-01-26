@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Business Card</string>
+    <string name="description">Tailoring exquisite outfits since 2001</string>
+    <string name="title">TC\'s Alterations</string>
+    <string name="address">10 Bridge End\nLeeds\nLS1 1PR</string>
+    <string name="image_description">sewing tools</string>
+    <string name="email">tcalterations@gmail.com</string>
+    <string name="phone">0113-244-6587</string>
 </resources>
