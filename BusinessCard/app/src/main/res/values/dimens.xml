@@ -6,4 +6,5 @@
     <dimen name="sub_heading">28sp</dimen>
     <dimen name="detail_text">20sp</dimen>
     <dimen name="padding">28dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
 </resources>
