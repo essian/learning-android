@@ -17,7 +17,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            player1Score = savedInstanceState.getInt(STATE_PLAYER1_SCORE);
+            player2Score = savedInstanceState.getInt(STATE_PLAYER2_SCORE);
+        } else {
+            player1Score = 0;
+            player2Score = 0;
+        }
         setContentView(R.layout.activity_main);
+        displayPlayer1Score(player1Score);
+        displayPlayer2Score(player2Score);
+    }
+
+    static final String STATE_PLAYER1_SCORE = "player1Score";
+    static final String STATE_PLAYER2_SCORE = "player2Score";
+
+            @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putInt(STATE_PLAYER1_SCORE, player1Score);
+        savedInstanceState.putInt(STATE_PLAYER2_SCORE, player2Score);
+
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     public void player1AddOne(View v){

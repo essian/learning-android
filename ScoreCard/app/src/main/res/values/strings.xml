@@ -7,7 +7,6 @@
     <string name="name_2">Sean</string>
 
     <!--Buttons-->
-    <string name="initial_score">0</string>
     <string name="add_one">+1 Point</string>
     <string name="minus_one">-1 Point</string>
     <string name="goal">Double Up!</string>

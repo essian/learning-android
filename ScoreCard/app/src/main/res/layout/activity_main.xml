@@ -55,8 +55,7 @@
                     style="@style/score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/initial_score" />
+                    android:gravity="center_horizontal" />
 
                 <Button
                     style="@style/button"
@@ -102,8 +101,7 @@
                     style="@style/score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/initial_score" />
+                    android:gravity="center_horizontal"/>
 
                 <Button
                     style="@style/button"
