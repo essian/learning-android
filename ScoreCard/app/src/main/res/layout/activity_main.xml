@@ -1,116 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fillViewport="true"
     tools:context="com.example.essian.scorecard.MainActivity">
 
     <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            style="@style/h1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Jess" />
+        <ImageView
 
-            <TextView
-                android:id="@+id/jess_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="0" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="jessAddOne"
-                android:text="+1 Point" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="jessMinusOne"
-                android:text="-1 Point" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="jessDoubleUp"
-                android:text="Double up!" />
-        </LinearLayout>
-
-
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:contentDescription="@string/main_image_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/laundry_hoops" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Sean" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/sean_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="0" />
+                <TextView
+                    style="@style/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/name_1" />
 
-            <Button
+                <TextView
+                    android:id="@+id/player1_score"
+                    style="@style/score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/initial_score" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player1AddOne"
+                    android:text="@string/add_one" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player1MinusOne"
+                    android:text="@string/minus_one" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player1DoubleUp"
+                    android:text="@string/goal" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="seanAddOne"
-                android:text="+1 Point" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="seanMinusOne"
-                android:text="-1 Point" />
+                <TextView
+                    style="@style/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/name_2" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="seanDoubleUp"
-                android:text="Double up!" />
+                <TextView
+                    android:id="@+id/player2_score"
+                    style="@style/score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/initial_score" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player2AddOne"
+                    android:text="@string/add_one" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player2MinusOne"
+                    android:text="@string/minus_one" />
+
+                <Button
+                    style="@style/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="player2DoubleUp"
+                    android:text="@string/goal" />
+            </LinearLayout>
         </LinearLayout>
+
+        <Button
+            style="@style/buttonReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="resetScores"
+            android:text="@string/reset" />
+
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:onClick="resetScores"
-        android:text="Reset"
-        android:layout_marginBottom="32dp"
-       />
-
-
-</LinearLayout>
+</ScrollView>

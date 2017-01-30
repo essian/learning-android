@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">Score Card</string>
+
+    <string name="app_name">Laundry Hoops</string>
+
+    <!--Player Names-->
+    <string name="name_1">Jess</string>
+    <string name="name_2">Sean</string>
+
+    <!--Buttons-->
+    <string name="initial_score">0</string>
+    <string name="add_one">+1 Point</string>
+    <string name="minus_one">-1 Point</string>
+    <string name="goal">Double Up!</string>
+    <string name="reset">Reset</string>
+
+    <!--Toast-->
+    <string name="only_positive_doubled">Only positive scores can be doubled</string>
+
+    <!--Image Descriptions-->
+    <string name="main_image_description">Basketball hoop</string>
+
 </resources>
