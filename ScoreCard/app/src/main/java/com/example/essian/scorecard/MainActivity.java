@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
             player2Score = 0;
         }
         setContentView(R.layout.activity_main);
-        displayPlayer1Score(player1Score);
-        displayPlayer2Score(player2Score);
+        displayScore(player1Score, 1);
+        displayScore(player2Score, 2);
     }
 
 
@@ -44,65 +44,64 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    public void player1AddOne(View v) {
-        player1Score = player1Score + 1;
-        displayPlayer1Score(player1Score);
+    public void addOne(View v) {
+        int player = Integer.parseInt(v.getTag().toString());
+
+        if (player == 1) {
+            player1Score += 1;
+            displayScore(player1Score, player);
+        } else {
+            player2Score += 1;
+            displayScore(player2Score, player);
+        }
         blinkImage(1);
     }
 
-    public void player1MinusOne(View v) {
-        player1Score = player1Score - 1;
-        displayPlayer1Score(player1Score);
+    public void subtractOne(View v) {
+        int player = Integer.parseInt(v.getTag().toString());
+
+        if (player == 1) {
+            player1Score -= 1;
+            displayScore(player1Score, player);
+        } else {
+            player2Score -= 1;
+            displayScore(player2Score, player);
+        }
     }
 
-    public void player1DoubleUp(View v) {
-        if (player1Score > 0) {
+    public void doubleUp(View v) {
+        int player = Integer.parseInt(v.getTag().toString());
+        if (player == 1 && player1Score > 0) {
             blinkImage(player1Score);
             player1Score = player1Score * 2;
-            displayPlayer1Score(player1Score);
-            return;
-        }
-        Toast.makeText(this, R.string.only_positive_doubled, Toast.LENGTH_SHORT).show();
-    }
-
-
-    public void player2AddOne(View v) {
-        player2Score = player2Score + 1;
-        displayPlayer2Score(player2Score);
-        blinkImage(1);
-    }
-
-    public void player2MinusOne(View v) {
-        player2Score = player2Score - 1;
-        displayPlayer2Score(player2Score);
-    }
-
-    public void player2DoubleUp(View v) {
-        if (player2Score > 0) {
+            displayScore(player1Score, 1);
+        } else if (player == 2 && player2Score > 0) {
             blinkImage(player2Score);
             player2Score = player2Score * 2;
-            displayPlayer2Score(player2Score);
-            return;
+            displayScore(player2Score, 2);
+        } else {
+            Toast.makeText(this, R.string.only_positive_doubled, Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, R.string.only_positive_doubled, Toast.LENGTH_SHORT).show();
     }
+
 
     public void resetScores(View v) {
         player1Score = 0;
         player2Score = 0;
-        displayPlayer2Score(player2Score);
-        displayPlayer1Score(player1Score);
+        displayScore(player2Score, 2);
+        displayScore(player1Score, 1);
     }
 
-    private void displayPlayer1Score(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player1_score);
-        scoreView.setText(String.valueOf(score));
+    private void displayScore(int score, int player) {
+        TextView scoreViewP1 = (TextView) findViewById(R.id.player1_score);
+        TextView scoreViewP2 = (TextView) findViewById(R.id.player2_score);
+        if (player == 1) {
+            scoreViewP1.setText(String.valueOf(score));
+        } else {
+            scoreViewP2.setText(String.valueOf(score));
+        }
     }
 
-    private void displayPlayer2Score(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player2_score);
-        scoreView.setText(String.valueOf(score));
-    }
 
     private void blinkImage(int count) {
         ImageView mainImage = (ImageView) findViewById(R.id.main_image);

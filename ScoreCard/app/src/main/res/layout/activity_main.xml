@@ -62,15 +62,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player1AddOne"
+                    android:onClick="addOne"
+                    android:tag="1"
                     android:text="@string/add_one" />
+                <!--android:onClick="player1AddOne"-->
+
 
                 <Button
                     style="@style/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player1MinusOne"
+                    android:onClick="subtractOne"
+                    android:tag="1"
                     android:text="@string/minus_one" />
 
                 <Button
@@ -78,7 +82,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player1DoubleUp"
+                    android:onClick="doubleUp"
+                    android:tag="1"
                     android:text="@string/goal" />
             </LinearLayout>
 
@@ -101,14 +106,15 @@
                     style="@style/score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal" />
 
                 <Button
                     style="@style/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player2AddOne"
+                    android:onClick="addOne"
+                    android:tag="2"
                     android:text="@string/add_one" />
 
                 <Button
@@ -116,7 +122,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player2MinusOne"
+                    android:onClick="subtractOne"
+                    android:tag="2"
                     android:text="@string/minus_one" />
 
                 <Button
@@ -124,7 +131,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="player2DoubleUp"
+                    android:onClick="doubleUp"
+                    android:tag="2"
                     android:text="@string/goal" />
             </LinearLayout>
         </LinearLayout>
