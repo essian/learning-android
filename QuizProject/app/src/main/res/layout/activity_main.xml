@@ -36,6 +36,7 @@
 
 
         <TextView
+            android:id="@+id/questionBasting"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,6 +67,7 @@
 
 
         <TextView
+            android:id="@+id/electricMachine"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +82,7 @@
 
 
         <TextView
+            android:id="@+id/needleEye"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,7 +119,7 @@
         </RelativeLayout>
 
         <TextView
-
+android:id="@+id/timGunn"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,6 +133,7 @@
             android:inputType="text" />
 
         <TextView
+            android:id="@+id/treadle"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,6 +156,7 @@
             android:inputType="text" />
 
         <TextView
+            android:id="@+id/big4"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -239,6 +244,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/questionOverlockerThreads"
             style="@style/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
