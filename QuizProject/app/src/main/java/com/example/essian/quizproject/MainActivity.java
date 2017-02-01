@@ -2,9 +2,7 @@ package com.example.essian.quizproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -12,8 +10,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.example.essian.quizproject.R.id.needleEye;
 
 
 /**
@@ -25,28 +21,35 @@ public class MainActivity extends AppCompatActivity {
     static final String STATE_NEEDLE_COUNT = "needleCount";
     int needle_count = 0;
     int score = 0;
-    TextView timGunnQuestionView;
-    String timGunnCorrectAnswer = "make it work";
-    EditText timGunnAnswer;
-    TextView treadleQuestionView;
-    String treadleCorrectAnswer = "treadle";
-    EditText treadleAnswer;
-    TextView big4QuestionView;
-    CheckBox simplicity;
-    CheckBox vogue;
-    CheckBox butterick;
-    CheckBox mccalls;
-    CheckBox burdastyle;
-    CheckBox kwiksew;
-    CheckBox burda;
-    CheckBox newlook;
+
+    private TextView timGunnQuestionView;
+    private String timGunnCorrectAnswer = "make it work";
+    private EditText timGunnAnswer;
+
+    private TextView treadleQuestionView;
+    private String treadleCorrectAnswer = "treadle";
+    private EditText treadleAnswer;
+
+    private TextView big4QuestionView;
+    private CheckBox simplicity;
+    private CheckBox vogue;
+    private CheckBox butterick;
+    private CheckBox mccalls;
+    private CheckBox burdastyle;
+    private CheckBox kwiksew;
+    private CheckBox burda;
+    private CheckBox newlook;
+
     private TextView needleEyeQuestion;
     private RadioButton needleEyeAnswer;
+
     private TextView overlockerThreadsQuestionView;
     private TextView overlockerThreadsAnswerView;
     private String overlockerThreadsCorrectAnswer = "2";
+
     private TextView bastingQuestionView;
     private RadioButton bastingCorrectAnswer;
+
     private TextView electricMachineQuestionView;
     private String electricMachineCorrectAnswer = "singer";
     private EditText electricMachineAnswer;
@@ -162,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void scoreQuestionOverlockerThreads() {
         boolean result = overlockerThreadsAnswerView.getText().equals(overlockerThreadsCorrectAnswer);
-        updateScoreAndDisplay(result, overlockerThreadsQuestionView);
+        grade(result, overlockerThreadsQuestionView);
     }
 
     /**
@@ -170,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void scoreQuestionBasting() {
         boolean result = bastingCorrectAnswer.isChecked();
-        updateScoreAndDisplay(result, bastingQuestionView);
+        grade(result, bastingQuestionView);
     }
 
 
@@ -179,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void scoreQuestionElectricMachine() {
         boolean result = electricMachineAnswer.getText().toString().toLowerCase().contains(electricMachineCorrectAnswer);
-        updateScoreAndDisplay(result, electricMachineQuestionView);
+        grade(result, electricMachineQuestionView);
     }
 
     /**
@@ -187,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void scoreQuestionNeedleEye() {
         boolean result = needleEyeAnswer.isChecked();
-        updateScoreAndDisplay(result, needleEyeQuestion);
+        grade(result, needleEyeQuestion);
     }
 
     /**
@@ -195,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void scoreQuestionTimGunn() {
         boolean result = timGunnAnswer.getText().toString().toLowerCase().contains(timGunnCorrectAnswer);
-        updateScoreAndDisplay(result, timGunnQuestionView);
+        grade(result, timGunnQuestionView);
     }
 
     /**
@@ -204,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
     private void scoreQuestionTreadle() {
         String treadleTextAnswer = treadleAnswer.getText().toString().toLowerCase();
         boolean result = treadleTextAnswer.contains(treadleCorrectAnswer) || treadleTextAnswer.contains("treddle");
-        updateScoreAndDisplay(result, treadleQuestionView);
+        grade(result, treadleQuestionView);
     }
 
     /**
@@ -220,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                 burda.isChecked() ||
                 newlook.isChecked();
         boolean result = allRightAnswers && !anyWrongAnswers;
-        updateScoreAndDisplay(result, big4QuestionView);
+        grade(result, big4QuestionView);
     }
 
     /**
@@ -249,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
      * @param result       is a boolean indicating if the answer was correct (true)
      * @param questionView is the textView that holds the question text
      */
-    private void updateScoreAndDisplay(boolean result, TextView questionView) {
+    private void grade(boolean result, TextView questionView) {
         if (result) {
             score += 1;
             correctColor(questionView);
