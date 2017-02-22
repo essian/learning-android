@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HS Coffee Shop</string>
+    <string name="coffee_shop">Coffee Shop</string>
+    <string-array name="menu">
+        <item>Drinks</item>
+        <item>Food</item>
+        <item>Stores</item>
+    </string-array>
+</resources>
