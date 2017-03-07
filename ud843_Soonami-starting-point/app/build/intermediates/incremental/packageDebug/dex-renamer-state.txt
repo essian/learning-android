@@ -1,0 +1,7 @@
+#Fri Feb 24 10:28:33 GMT 2017
+base.0=/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4b9bb0033e00e1991ee1712e37244a5763d1c18f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ad8b6ac8e50f89262fd127af594f18475ff4f60b/classes.dex
+base.1=/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ad8b6ac8e50f89262fd127af594f18475ff4f60b
+file.0=/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4b9bb0033e00e1991ee1712e37244a5763d1c18f/classes.dex

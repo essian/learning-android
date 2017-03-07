@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_add_pet.png",
+        "source": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/src/main/res/drawable-mdpi/ic_add_pet.png"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_done.png",
+        "source": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/src/main/res/drawable-mdpi/ic_done.png"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_empty_shelter.png",
+        "source": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/src/main/res/drawable-mdpi/ic_empty_shelter.png"
+    }
+]

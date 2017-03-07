@@ -1,0 +1,7 @@
+#Fri Feb 24 11:19:53 GMT 2017
+base.0=/Users/Essian/AndroidStudioProjects/ud843_DidYouFeelIt-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_787dc50eb2975d9af5f8000b03a16990959df82f
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/Essian/AndroidStudioProjects/ud843_DidYouFeelIt-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_09e31f002d2ab6bf198bb55673ef64aec22fc171/classes.dex
+base.1=/Users/Essian/AndroidStudioProjects/ud843_DidYouFeelIt-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_09e31f002d2ab6bf198bb55673ef64aec22fc171
+file.0=/Users/Essian/AndroidStudioProjects/ud843_DidYouFeelIt-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_787dc50eb2975d9af5f8000b03a16990959df82f/classes.dex

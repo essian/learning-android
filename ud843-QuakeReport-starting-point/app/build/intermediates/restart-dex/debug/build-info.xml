@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    density="560dpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1270199561470809"
+    token="3501389602158442233"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="131" />
+    <task
+        name="instant-run-dex"
+        duration="396" />
+    <task
+        name="instant-run-transform"
+        duration="35" />
+    <task
+        name="verifier"
+        duration="1" />
+
+    <artifact
+        location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        timestamp="1249597884729836"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="1269323101286494"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="1270153677438275"
+        verifier="CLASS_ADDED" >
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="1270199561470809"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

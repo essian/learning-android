@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
+        "source": "/Users/Essian/.android/build-cache/84be2fd0d1098bb019060d50cd6ce3b23a27e9b8/output/res/drawable-v21/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/Essian/.android/build-cache/883f1a24a3717460f08b91a5b29feb273b192160/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/Essian/.android/build-cache/883f1a24a3717460f08b91a5b29feb273b192160/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
+        "source": "/Users/Essian/.android/build-cache/84be2fd0d1098bb019060d50cd6ce3b23a27e9b8/output/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/Users/Essian/.android/build-cache/84be2fd0d1098bb019060d50cd6ce3b23a27e9b8/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/Essian/.android/build-cache/883f1a24a3717460f08b91a5b29feb273b192160/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/Essian/.android/build-cache/883f1a24a3717460f08b91a5b29feb273b192160/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
+        "source": "/Users/Essian/.android/build-cache/84be2fd0d1098bb019060d50cd6ce3b23a27e9b8/output/res/drawable-v21/avd_show_password.xml"
+    }
+]

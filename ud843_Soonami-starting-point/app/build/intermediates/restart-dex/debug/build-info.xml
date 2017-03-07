@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    density="560dpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1335923542098644"
+    token="-403793468841577153"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="151" />
+    <task
+        name="instant-run-dex"
+        duration="447" />
+    <task
+        name="instant-run-transform"
+        duration="15" />
+    <task
+        name="verifier"
+        duration="2" />
+
+    <artifact
+        location="/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        timestamp="1333663523682385"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="1335887354325089"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/builds/debug/1335887354325089/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="1335906965746038"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/builds/debug/1335906965746038/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="1335923542098644"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/ud843_Soonami-starting-point/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

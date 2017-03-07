@@ -1,0 +1,7 @@
+#Thu Feb 23 10:34:51 GMT 2017
+base.0=/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_82308451f82614b2afedf0d807aa6d2ef7f42ae4
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f492955089aa22576e900e1f3e6af0b9ad269ac0/classes.dex
+base.1=/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f492955089aa22576e900e1f3e6af0b9ad269ac0
+file.0=/Users/Essian/Downloads/ud843-QuakeReport-starting-point/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_82308451f82614b2afedf0d807aa6d2ef7f42ae4/classes.dex

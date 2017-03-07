@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/menu/menu_editor.xml",
+        "source": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/src/main/res/menu/menu_editor.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/build/intermediates/res/merged/debug/menu/menu_catalog.xml",
+        "source": "/Users/Essian/AndroidStudioProjects/ud845-Pets-starting-point/app/src/main/res/menu/menu_catalog.xml"
+    }
+]

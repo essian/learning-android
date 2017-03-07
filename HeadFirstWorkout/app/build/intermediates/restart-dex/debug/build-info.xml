@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    density="560dpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1682881881275972"
+    token="-3747472345162353451"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="183" />
+    <task
+        name="instant-run-dex"
+        duration="36" />
+    <task
+        name="instant-run-transform"
+        duration="28" />
+    <task
+        name="verifier"
+        duration="6" />
+
+    <artifact
+        location="/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        timestamp="1680620826167886"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="1682440384433934"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="1682881881275972"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

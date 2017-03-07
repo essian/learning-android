@@ -1,0 +1,7 @@
+#Wed Mar 01 15:07:17 GMT 2017
+base.0=/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b976a2416e3e852ae33f5ddc7d5e4c46b2cb0f85
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8aa366a98eddf26f5e500ec97498380f19f413af/classes.dex
+base.1=/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8aa366a98eddf26f5e500ec97498380f19f413af
+file.0=/Users/Essian/AndroidStudioProjects/HeadFirstWorkout/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b976a2416e3e852ae33f5ddc7d5e4c46b2cb0f85/classes.dex
