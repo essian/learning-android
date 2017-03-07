@@ -3,15 +3,19 @@ package com.bignerdranch.android.geoquiz;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.widget.Toast.makeText;
+
 public class QuizActivity extends AppCompatActivity {
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
+    private static final String KEY_SCORE =  "Score";
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -29,6 +33,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private int mCurrentIndex = 0;
 
+    private int mScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+            mScore = savedInstanceState.getInt(KEY_SCORE, 0);
         }
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
@@ -52,9 +59,7 @@ public class QuizActivity extends AppCompatActivity {
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                checkAnswer(false);
-            }
+            public void onClick(View v) { checkAnswer(false); }
         });
 
         mNextButton = (Button) findViewById(R.id.next_button);
@@ -62,6 +67,12 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                if (mCurrentIndex == 0) {
+                    Toast toast = Toast.makeText(QuizActivity.this, "You scored " + mScore + " out of " + mQuestionBank.length, Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                    mScore = 0;
+                }
                 updateQuestion();
             }
         });
@@ -92,6 +103,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         Log.i(TAG, "onSaveInstanceState");
         savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+        savedInstanceState.putInt(KEY_SCORE, mScore);
     }
 
     @Override
@@ -109,6 +121,9 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
+        mTrueButton.setEnabled(true);
+        mFalseButton.setEnabled(true);
+
     }
 
     private void checkAnswer(boolean userPressedTrue) {
@@ -118,11 +133,16 @@ public class QuizActivity extends AppCompatActivity {
 
         if (userPressedTrue == answerIsTrue) {
             messageResId = R.string.correct_toast;
+            mScore ++;
         } else {
             messageResId = R.string.incorrect_toast;
         }
+        mTrueButton.setEnabled(false);
+        mFalseButton.setEnabled(false);
 
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
+        makeText(this, messageResId, Toast.LENGTH_SHORT)
                 .show();
+
+
     }
 }
