@@ -132,6 +132,10 @@
         "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/layout/select_dialog_item_material.xml"
     },
     {
+        "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/layout/activity_cheat.xml",
+        "source": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/src/main/res/layout/activity_cheat.xml"
+    },
+    {
         "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/layout/abc_action_mode_close_item_material.xml"
     },
