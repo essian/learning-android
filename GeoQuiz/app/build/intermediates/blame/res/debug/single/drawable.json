@@ -8,12 +8,12 @@
         "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/drawable/abc_tab_indicator_material.xml"
     },
     {
-        "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
         "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/Essian/.android/build-cache/e9746124b4ada069717c4091959f5116a1991a6f/output/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
