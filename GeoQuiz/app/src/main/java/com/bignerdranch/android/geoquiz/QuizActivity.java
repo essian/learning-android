@@ -22,6 +22,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mNextButton;
     private Button mCheatButton;
     private TextView mQuestionTextView;
+    private TextView mCheatsRemainingTextView;
 
     private Question[] mQuestionBank = new Question[] {
             new Question(R.string.question_australia, true),
@@ -34,6 +35,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private int mCurrentIndex = 0;
     private boolean mIsCheater;
+    private int mCheatsRemaining = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class QuizActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
             mIsCheater = savedInstanceState.getBoolean(KEY_IS_CHEATER, false);
+
         }
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
@@ -87,6 +90,9 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        mCheatsRemainingTextView = (TextView) findViewById(R.id.cheats_remaining_text_view);
+        mCheatsRemainingTextView.setText("Cheats remaining: " + mCheatsRemaining);
+
         updateQuestion();
     }
 
@@ -100,6 +106,7 @@ public class QuizActivity extends AppCompatActivity {
                 return;
             }
             mIsCheater = CheatActivity.wasAnswerShown(data);
+            mCheatsRemaining -= 1;
         }
     }
 
@@ -113,6 +120,10 @@ public class QuizActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume() called");
+        mCheatsRemainingTextView.setText("Cheats remaining: " + mCheatsRemaining);
+        if (mCheatsRemaining == 0) {
+            mCheatButton.setEnabled(false);
+        }
     }
 
     @Override

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Mar 08 09:54:04 GMT 2017
+#Wed Mar 08 10:11:25 GMT 2017
 175.set=ANDROID_RESOURCE
 122.file=/Users/Essian/AndroidStudioProjects/GeoQuiz/app/build/intermediates/res/resources-debug.ap_/res/color/abc_primary_text_material_dark.xml
 60.set=ANDROID_RESOURCE
