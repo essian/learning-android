@@ -1,5 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,11 +9,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ShareCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +27,8 @@ import android.widget.EditText;
 
 import java.util.Date;
 import java.util.UUID;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Essian on 08/03/2017.
@@ -36,6 +42,8 @@ public class CrimeFragment extends Fragment {
     private static final int REQUEST_DATE = 0;
     private static final int REQUEST_CONTACT = 1;
 
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 2;
+
 
     private Crime mCrime;
     private EditText mTitleField;
@@ -43,6 +51,7 @@ public class CrimeFragment extends Fragment {
     private CheckBox mSolvedCheckbox;
     private Button mReportButton;
     private Button mSuspectButton;
+    private Button mCallSuspectButton;
 
     public static CrimeFragment newInstance(UUID crimeID) {
         Bundle args = new Bundle();
@@ -111,11 +120,11 @@ public class CrimeFragment extends Fragment {
         mReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_TEXT, getCrimeReport());
-                i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.crime_report_subject));
-                i = Intent.createChooser(i, getString(R.string.send_report));
+                Intent i = ShareCompat.IntentBuilder.from(getActivity())
+                        .setText(getCrimeReport())
+                        .setSubject(getString(R.string.crime_report_subject))
+                        .setType("text/plain")
+                        .getIntent();
                 startActivity(i);
             }
         });
@@ -140,7 +149,44 @@ public class CrimeFragment extends Fragment {
             mSuspectButton.setEnabled(false);
         }
 
+
+        mCallSuspectButton = (Button) v.findViewById(R.id.call_suspect);
+        if (mCrime.getSuspect() != null) {
+            mCallSuspectButton.setText("Call " + mCrime.getSuspect());
+        }
+        mCallSuspectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.READ_CONTACTS},
+                        MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+
+
+                String[] queryFields = new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER};
+                String[] selectionArgs = new String[]{mCrime.getSuspect()};
+
+                Cursor c = getActivity().getContentResolver().query(
+                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        queryFields,
+                        ContactsContract.Contacts.DISPLAY_NAME + " = ?",
+                        selectionArgs,
+                        null
+                );
+                c.moveToFirst();
+                String numberText = c.getString(0);
+                Log.i(TAG, "onClick: " + numberText);
+                Uri number = Uri.parse("tel:" + numberText);
+
+                Intent i = new Intent(Intent.ACTION_DIAL, number);
+                startActivity(i);
+
+            }
+
+
+        });
         return v;
+
     }
 
     @Override
