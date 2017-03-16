@@ -1,98 +1,109 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              tools:context="com.essian.android.quiz20.LeaderBoardFragment">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
 
-    <TextView
-        style="@style/h1"
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.essian.android.quiz20.LeaderBoardFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/main_image"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            style="@style/h1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"/>
 
-    <TextView
-        style="@style/h2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="High Scores"
-        android:gravity="center_horizontal"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_image"/>
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="2"
-        android:layout_weight="1"
-        android:layout_marginLeft="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/medium_margin">
+        <TextView
+            style="@style/h2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="High Scores"/>
 
-        <TableRow>
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="1"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_weight="1"
+            android:stretchColumns="2">
 
-            <TextView
-                android:layout_column="2"
-                android:padding="3dip"
-                android:text="Name 1"/>
+            <TableRow>
 
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="-"/>
-        </TableRow>
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="1"/>
 
-        <TableRow>
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="2"/>
+                <TextView
+                    android:layout_column="2"
+                    android:padding="3dip"
+                    android:text="Name 1"/>
 
-            <TextView
-                android:layout_column="2"
-                android:padding="3dip"
-                android:text="Name 2"/>
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="-"/>
+            </TableRow>
 
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="-"/>
-        </TableRow>
+            <TableRow>
 
-        <TableRow>
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="3"/>
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="2"/>
 
-            <TextView
-                android:layout_column="2"
-                android:padding="3dip"
-                android:text="Name 3"/>
+                <TextView
+                    android:layout_column="2"
+                    android:padding="3dip"
+                    android:text="Name 2"/>
 
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="-"/>
-        </TableRow>
-    </TableLayout>
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="-"/>
+            </TableRow>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_menu_quiz"/>
+            <TableRow>
 
-</LinearLayout>
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="3"/>
+
+                <TextView
+                    android:layout_column="2"
+                    android:padding="3dip"
+                    android:text="Name 3"/>
+
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="-"/>
+            </TableRow>
+        </TableLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_menu_quiz"/>
+
+    </LinearLayout>
+</ScrollView>

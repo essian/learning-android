@@ -16,9 +16,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.essian.android.quiz20.R.id.treadle;
 
 
 /**
@@ -35,12 +39,13 @@ public class QuizFragment extends Fragment {
 
     private TextView timGunnQuestionView;
     private String timGunnCorrectAnswer = "make it work";
-    private EditText timGunnAnswer;
+    private EditText mTimGunnEditText;
 
     private TextView treadleQuestionView;
     private String treadleCorrectAnswer = "treadle";
-    private EditText treadleAnswer;
+    private EditText mTreadleEditText;
 
+    private LinearLayout mBig4CheckBoxes;
     private TextView big4QuestionView;
     private CheckBox simplicity;
     private CheckBox vogue;
@@ -53,6 +58,7 @@ public class QuizFragment extends Fragment {
 
     private TextView needleEyeQuestion;
     private RadioButton needleEyeAnswer;
+    private RadioGroup mNeedleEyeRg;
 
     private TextView overlockerThreadsQuestionView;
     private TextView overlockerThreadsAnswerView;
@@ -60,13 +66,14 @@ public class QuizFragment extends Fragment {
 
     private TextView bastingQuestionView;
     private RadioButton bastingCorrectAnswer;
+    private RadioGroup mBastingRg;
 
     private TextView electricMachineQuestionView;
     private String electricMachineCorrectAnswer = "singer";
-    private EditText electricMachineAnswer;
+    private EditText mElectricMachineEditText;
 
     private TextView needle_quantity_view;
-    private Button mScore;
+    private Button mScoreButton;
     private Button mIncrementNeedles;
     private Button mDecrementNeedles;
     private Button mResetButton;
@@ -112,21 +119,25 @@ public class QuizFragment extends Fragment {
 
         needleEyeAnswer = (RadioButton) v.findViewById(R.id.needle_eye_tip);
         needleEyeQuestion = (TextView) v.findViewById(R.id.needleEye);
+        mNeedleEyeRg = (RadioGroup) v.findViewById(R.id.radio_group_needle_eye);
 
         bastingQuestionView = (TextView) v.findViewById(R.id.questionBasting);
         bastingCorrectAnswer = (RadioButton) v.findViewById(R.id.basting_true);
+        mBastingRg = (RadioGroup) v.findViewById(R.id.radio_group_basting);
+
 
         electricMachineQuestionView = (TextView) v.findViewById(R.id.electricMachine);
-        electricMachineAnswer = (EditText) v.findViewById(R.id.electric_machine_answer);
+        mElectricMachineEditText = (EditText) v.findViewById(R.id.electric_machine_answer);
 
         timGunnQuestionView = (TextView) v.findViewById(R.id.timGunn);
-        timGunnCorrectAnswer = "make it work";
-        timGunnAnswer = (EditText) v.findViewById(R.id.tim_gunn_answer);
+        timGunnCorrectAnswer = getString(R.string.tim_gunn_answer);
+        mTimGunnEditText = (EditText) v.findViewById(R.id.tim_gunn_answer);
 
-        treadleQuestionView = (TextView) v.findViewById(R.id.treadle);
+        treadleQuestionView = (TextView) v.findViewById(treadle);
         treadleCorrectAnswer = "treadle";
-        treadleAnswer = (EditText) v.findViewById(R.id.treadle_answer);
+        mTreadleEditText = (EditText) v.findViewById(R.id.treadle_answer);
 
+        mBig4CheckBoxes = (LinearLayout) v.findViewById(R.id.big4CheckBoxes);
         big4QuestionView = (TextView) v.findViewById(R.id.big4);
         simplicity = (CheckBox) v.findViewById(R.id.simplicity);
         vogue = (CheckBox) v.findViewById(R.id.vogue);
@@ -137,13 +148,7 @@ public class QuizFragment extends Fragment {
         burda = (CheckBox) v.findViewById(R.id.burda);
         newlook = (CheckBox) v.findViewById(R.id.newlook);
 
-        mScore = (Button) v.findViewById(R.id.score_button);
-        mScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                score();
-            }
-        });
+
         mIncrementNeedles = (Button) v.findViewById(R.id.increment_needles);
         mIncrementNeedles.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,16 +162,27 @@ public class QuizFragment extends Fragment {
         mDecrementNeedles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                needle_count -= 1;
-                displayNeedleCount();
+                if (needle_count > 0) {
+                    needle_count -= 1;
+                    displayNeedleCount();
+                } else {
+                    Toast.makeText(getActivity(), "You can not have negative needles", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
+        mScoreButton = (Button) v.findViewById(R.id.score_button);
+        mScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score();
+            }
+        });
         mResetButton = (Button) v.findViewById(R.id.reset_button);
         mResetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                restart();
+                reset();
             }
         });
         return v;
@@ -192,6 +208,7 @@ public class QuizFragment extends Fragment {
 
     /**
      * Saves the value of needle_count
+     *
      * @param savedInstanceState is passed to onCreateView when the fragment is recreated
      */
     @Override
@@ -206,12 +223,34 @@ public class QuizFragment extends Fragment {
     /**
      * This method restarts the fragment resulting in the answers and scores being reset
      */
-    public void restart() {
-        QuizFragment quiz = (QuizFragment) getFragmentManager().findFragmentById(R.id.fragment_container);
-        getFragmentManager().beginTransaction()
-                .detach(quiz)
-                .attach(quiz)
-                .commit();
+    public void reset() {
+//        QuizFragment quiz = (QuizFragment) getFragmentManager().findFragmentById(R.id.fragment_container);
+//        getFragmentManager().beginTransaction()
+//                .detach(quiz)
+//                .attach(quiz)
+//                .commit();
+        mNameEditText.setText("");
+        mElectricMachineEditText.setText("");
+        mTimGunnEditText.setText("");
+        mTreadleEditText.setText("");
+
+        mBastingRg.clearCheck();
+        mNeedleEyeRg.clearCheck();
+
+        needle_count = 0;
+        displayNeedleCount();
+
+        for (int i = 0; i < mBig4CheckBoxes.getChildCount(); i++) {
+
+            LinearLayout ll = (LinearLayout) mBig4CheckBoxes.getChildAt(i);
+            for (int j = 0; j < ll.getChildCount(); j++) {
+                View v = ll.getChildAt(j);
+                if (v instanceof CheckBox) {
+                    CheckBox cb = (CheckBox) v;
+                    cb.setChecked(false);
+                }
+            }
+        }
     }
 
 
@@ -259,7 +298,7 @@ public class QuizFragment extends Fragment {
      * This method increments the score if the answer to the question is correct
      */
     private void scoreQuestionElectricMachine() {
-        boolean result = electricMachineAnswer.getText().toString().toLowerCase().contains(electricMachineCorrectAnswer);
+        boolean result = mElectricMachineEditText.getText().toString().toLowerCase().contains(electricMachineCorrectAnswer);
         grade(result, electricMachineQuestionView);
     }
 
@@ -275,7 +314,7 @@ public class QuizFragment extends Fragment {
      * This method increments the score if the answer to the question is correct
      */
     private void scoreQuestionTimGunn() {
-        boolean result = timGunnAnswer.getText().toString().toLowerCase().contains(timGunnCorrectAnswer);
+        boolean result = mTimGunnEditText.getText().toString().toLowerCase().contains(timGunnCorrectAnswer);
         grade(result, timGunnQuestionView);
     }
 
@@ -283,7 +322,7 @@ public class QuizFragment extends Fragment {
      * This method increments the score if the answer to the question is correct
      */
     private void scoreQuestionTreadle() {
-        String treadleTextAnswer = treadleAnswer.getText().toString().toLowerCase();
+        String treadleTextAnswer = mTreadleEditText.getText().toString().toLowerCase();
         boolean result = treadleTextAnswer.contains(treadleCorrectAnswer) || treadleTextAnswer.contains("treddle");
         grade(result, treadleQuestionView);
     }

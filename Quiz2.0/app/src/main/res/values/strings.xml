@@ -6,7 +6,7 @@
     <string name="title_activity_quiz">QuizActivity</string>
 
     <string name="title">The Great British Sewing Quiz</string>
-    <string name="sub_title">There are 7 questions. Good Luck!</string>
+    <string name="sub_title">There are 8 questions. Good Luck!</string>
 
 
     <!--Questions-->
@@ -48,4 +48,5 @@
     <string name="start_again">Reset</string>
     <string name="final_greeting">That\'s all the questions!</string>
     <string name="invalid_needle_count">You cannot have less than zero needles</string>
+    <string name="tim_gunn_answer">make it work</string>
 </resources>
