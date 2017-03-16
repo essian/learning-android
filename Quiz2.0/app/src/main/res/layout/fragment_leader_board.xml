@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              tools:context="com.essian.android.quiz20.LeaderBoardFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the Sewing Quiz"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="High Scores"
+        android:gravity="center_horizontal"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="2"
+        android:padding="16dp">
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="1"/>
+
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="Name 1"/>
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="-"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="2"/>
+
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="Name 2"/>
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="-"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"/>
+
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="Name 3"/>
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="-"/>
+        </TableRow>
+    </TableLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_menu_quiz"/>
+
+</LinearLayout>

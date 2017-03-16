@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="h1">
+        <item name="android:layout_marginBottom">@dimen/medium_margin</item>
+        <item name="android:layout_marginTop">@dimen/medium_margin</item>
+        <item name="android:textSize">@dimen/large_text</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="h2">
+        <item name="android:layout_margin">@dimen/large_margin</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--Text-->
+    <style name="question">
+        <item name="android:layout_margin">@dimen/large_margin</item>
+        <item name="android:textSize">@dimen/standard_text</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="editText">
+        <item name="android:layout_marginLeft">@dimen/extra_large_margin</item>
+        <item name="android:layout_marginRight">@dimen/extra_large_margin</item>
+        <item name="android:layout_marginTop">@dimen/medium_margin</item>
+        <item name="android:layout_marginBottom">@dimen/medium_margin</item>
+        <item name="android:textSize">@dimen/standard_text</item>
+        <item name="android:hint">Answer here</item>
+    </style>
+
+    <!--Buttons-->
+
+    <style name="smallButton">
+        <item name="android:layout_width">@dimen/small_button</item>
+        <item name="android:layout_height">@dimen/small_button</item>
+    </style>
+
+
+    <!--Radio Buttons-->
+
+    <style name="radioButton">
+        <item name="android:textSize">@dimen/standard_text</item>
+        <item name="android:paddingRight">@dimen/small_padding</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <!--Checkboxes-->
+    <style name="checkBox">
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:layout_marginLeft">@dimen/medium_margin</item>
+        <item name="android:layout_marginTop">@dimen/small_padding</item>
+        <item name="android:layout_marginBottom">@dimen/small_padding</item>
+    </style>
+
+</resources>
