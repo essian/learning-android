@@ -201,6 +201,9 @@ public class QuizFragment extends Fragment {
             case R.id.submit_quiz:
                 score();
                 return true;
+            case R.id.reset_quiz:
+                reset();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -251,6 +254,7 @@ public class QuizFragment extends Fragment {
                 }
             }
         }
+        mNameEditText.requestFocus();
     }
 
 
@@ -260,6 +264,7 @@ public class QuizFragment extends Fragment {
     public void score() {
         if (getName() == null || getName().isEmpty()) {
             Toast.makeText(getActivity(), "Please enter your name", Toast.LENGTH_SHORT).show();
+            mNameEditText.requestFocus();
             return;
         }
         scoreQuestionOverlockerThreads();

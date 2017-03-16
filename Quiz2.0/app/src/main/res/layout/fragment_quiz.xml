@@ -34,7 +34,8 @@
             style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="text"
+            android:hint="Enter your name"/>
 
         <TextView
             android:id="@+id/questionBasting"
