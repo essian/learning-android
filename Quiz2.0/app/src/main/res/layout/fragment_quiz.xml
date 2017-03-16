@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white">
@@ -11,22 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context="com.example.essian.quizproject.MainActivity">
+        tools:context="com.example.essian.quizproject.MainActivity"
+        android:focusableInTouchMode="true">
 
-
-        <TextView
-            style="@style/h1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/main_logo"
-            android:scaleType="centerCrop"
-            android:src="@drawable/main_image" />
 
         <TextView
             style="@style/h2"
@@ -34,6 +22,19 @@
             android:layout_height="wrap_content"
             android:text="@string/sub_title" />
 
+        <TextView
+            android:id="@+id/nameQuestion"
+            style="@style/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is your name?" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            style="@style/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/questionBasting"

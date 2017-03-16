@@ -30,6 +30,9 @@ public class QuizFragment extends Fragment {
     int needle_count = 0;
     int score = 0;
 
+    private EditText mNameEditText;
+    private String mName;
+
     private TextView timGunnQuestionView;
     private String timGunnCorrectAnswer = "make it work";
     private EditText timGunnAnswer;
@@ -105,6 +108,8 @@ public class QuizFragment extends Fragment {
 
         displayNeedleCount();
 
+        mNameEditText = (EditText) v.findViewById(R.id.nameEditText);
+
         needleEyeAnswer = (RadioButton) v.findViewById(R.id.needle_eye_tip);
         needleEyeQuestion = (TextView) v.findViewById(R.id.needleEye);
 
@@ -164,7 +169,6 @@ public class QuizFragment extends Fragment {
                 restart();
             }
         });
-
         return v;
     }
 
@@ -215,6 +219,10 @@ public class QuizFragment extends Fragment {
      * This method calculates the user's score, displays it then resets it ready for the app to be rescored.
      */
     public void score() {
+        if (getName() == null || getName().isEmpty()) {
+            Toast.makeText(getActivity(), "Please enter your name", Toast.LENGTH_SHORT).show();
+            return;
+        }
         scoreQuestionOverlockerThreads();
         scoreQuestionBasting();
         scoreQuestionElectricMachine();
@@ -224,6 +232,11 @@ public class QuizFragment extends Fragment {
         scoreQuestionBig4();
         displayScore();
         score = 0;
+    }
+
+    public String getName() {
+        mName = mNameEditText.getText().toString().trim();
+        return mName;
     }
 
     /**
@@ -305,7 +318,7 @@ public class QuizFragment extends Fragment {
     private void displayScore() {
         String message = "You scored " + score;
         message += " out of 7";
-        message += "\nWell done!";
+        message += "\nWell done " + mName + "!";
         Toast toast = Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
