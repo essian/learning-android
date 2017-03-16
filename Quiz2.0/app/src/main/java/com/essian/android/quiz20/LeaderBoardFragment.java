@@ -48,21 +48,5 @@ public class LeaderBoardFragment extends Fragment {
         return v;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.fragment_leader_board, menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.take_quiz:
-                Intent i = new Intent(getActivity(), QuizActivity.class);
-                startActivity(i);
-                return true;
-            default:
-               return super.onOptionsItemSelected(item);
-        }
-    }
 }
