@@ -15,8 +15,8 @@
 
     <!--Text Size-->
     <dimen name="large_text">36sp</dimen>
-    <dimen name="standard_text">24sp</dimen>
-    <dimen name="small_text">20sp</dimen>
+    <dimen name="standard_text">20sp</dimen>
+    <dimen name="small_text">16sp</dimen>
 
     <!--buttons-->
     <dimen name="small_button">48dp</dimen>

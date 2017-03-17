@@ -365,7 +365,7 @@ public class QuizFragment extends Fragment {
 //        toast.setGravity(Gravity.CENTER, 0, 0);
 //        toast.show();
         FragmentManager fm = getFragmentManager();
-        DisplayScoreFragment scoreDialog = DisplayScoreFragment.newInstance(score, mName);
+        DisplayQuizResultFragment scoreDialog = DisplayQuizResultFragment.newInstance(score, mName);
         scoreDialog.show(fm, DIALOG_SCORE);
     }
 
@@ -378,21 +378,11 @@ public class QuizFragment extends Fragment {
     private void grade(boolean result, TextView questionView) {
         if (result) {
             score += 1;
-            correctColor(questionView);
         } else {
             incorrectColor(questionView);
         }
     }
 
-    /**
-     * This method sets the text color of the passed in view to colorCorrectAnswer
-     *
-     * @param view is the current view
-     */
-    private void correctColor(TextView view) {
-        view.setTextColor(getColorWrapper(getContext(), R.color.colorCorrectAnswer));
-
-    }
 
     /**
      * This method sets the text color of the passed in view to colorCorrectAnswer
@@ -400,7 +390,7 @@ public class QuizFragment extends Fragment {
      * @param view is the current view
      */
     private void incorrectColor(TextView view) {
-        view.setTextColor(getColorWrapper(getContext(), R.color.colorIncorrectAnswer));
+        view.setTextColor(getColorWrapper(getContext(), R.color.colorAccent));
 
     }
 

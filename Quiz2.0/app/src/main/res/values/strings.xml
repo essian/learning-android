@@ -5,7 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_quiz">QuizActivity</string>
 
-    <string name="title">The Great British Sewing Quiz</string>
+    <string name="title">The Sewing Quiz</string>
     <string name="sub_title">There are 8 questions. Good Luck!</string>
 
 
@@ -53,6 +53,7 @@
     <!--Dialog Text-->
     <string name="save">Save</string>
     <string name="retry">Retry</string>
+    <string name="no_high_scores">There are no high scores yet</string>
     <plurals name="point">
         <item quantity="one">point</item>
         <item quantity="other">points</item>

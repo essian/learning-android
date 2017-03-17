@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    public ScoreSet mScores;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,5 +17,10 @@ public class MainActivity extends AppCompatActivity {
         Fragment leaderBoard = new LeaderBoardFragment();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.fragment_container, leaderBoard).commit();
+
+    }
+
+    public ScoreSet getScores() {
+        return mScores;
     }
 }
