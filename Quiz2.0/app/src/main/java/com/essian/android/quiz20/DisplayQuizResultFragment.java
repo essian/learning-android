@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 
-import database.ScoreBaseHelper;
+import database.ScoreDbHelper;
 
 /**
  * Created by Essian on 17/03/2017.
@@ -44,13 +44,13 @@ public class DisplayQuizResultFragment extends DialogFragment {
                 + "! You scored " + score + " " + getResources().getQuantityString(R.plurals.point, score) +"."
                 + "\n\nDo you want to save your score or retry and change your answers?";
         return new AlertDialog.Builder(getActivity())
-                .setTitle("Your Score")
+                .setTitle("Your score")
                 .setMessage(message)
                 .setPositiveButton(R.string.save,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                SQLiteOpenHelper scoreDbHelper = new ScoreBaseHelper(getActivity());
+                                SQLiteOpenHelper scoreDbHelper = new ScoreDbHelper(getActivity());
                                 SQLiteDatabase db = scoreDbHelper.getReadableDatabase();
                                 ContentValues values = new ContentValues();
                                 values.put("NAME", name);

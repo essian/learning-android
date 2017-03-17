@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +18,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import database.ScoreBaseHelper;
-
-import static android.content.ContentValues.TAG;
+import database.ScoreDbHelper;
 
 
 /**
@@ -29,10 +26,7 @@ import static android.content.ContentValues.TAG;
  */
 public class LeaderBoardFragment extends Fragment {
 
-    private static final String EXTRA_SCORE = "score";
-    private static final String EXTRA_NAME = "name";
-    public ScoreSet mScores;
-
+    ViewGroup parent;
 
     public LeaderBoardFragment() {
         // Required empty public constructor
@@ -42,8 +36,6 @@ public class LeaderBoardFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-        Log.i(TAG, "onCreate: called");
     }
 
     @Override
@@ -59,6 +51,8 @@ public class LeaderBoardFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        parent = (ViewGroup) v.findViewById(R.id.score_table);
         return v;
     }
 
@@ -69,11 +63,19 @@ public class LeaderBoardFragment extends Fragment {
         drawTable(v);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        View v = getView();
+        parent.removeAllViews();
+
+    }
+
     private void drawTable(View v) {
 
         TableLayout tl = new TableLayout(getContext());
         try {
-            SQLiteOpenHelper scoreDbHelper = new ScoreBaseHelper(getActivity());
+            SQLiteOpenHelper scoreDbHelper = new ScoreDbHelper(getActivity());
             SQLiteDatabase db = scoreDbHelper.getReadableDatabase();
             Cursor cursor = db.query(
                     "SCORE",
@@ -83,9 +85,8 @@ public class LeaderBoardFragment extends Fragment {
                     null,
                     null,
                     "SCORE DESC LIMIT 3");
-
             cursor.moveToFirst();
-            while (cursor.isAfterLast() == false) {
+            while (!cursor.isAfterLast()) {
                 TableRow tr = new TableRow(getContext());
                 TextView nameView = new TextView(getContext(), null, R.attr.tableRow);
                 nameView.setText(cursor.getString(0));
@@ -98,13 +99,12 @@ public class LeaderBoardFragment extends Fragment {
                 tl.addView(tr);
                 cursor.moveToNext();
             }
+            cursor.close();
 
         } catch (SQLiteException e) {
-            Toast.makeText(getActivity(), "Database unavailable", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "drawTable: " + e);
+            Toast.makeText(getActivity(), R.string.database_unavailable, Toast.LENGTH_SHORT).show();
         }
 
-        ViewGroup parent = (ViewGroup) v.findViewById(R.id.score_table);
         if (tl.getChildCount() > 0) {
             parent.addView(tl);
         } else {

@@ -54,6 +54,8 @@
     <string name="save">Save</string>
     <string name="retry">Retry</string>
     <string name="no_high_scores">There are no high scores yet</string>
+    <string name="database_unavailable">Database unavailable</string>
+    <string name="electric_machine_answer">singer</string>
     <plurals name="point">
         <item quantity="one">point</item>
         <item quantity="other">points</item>

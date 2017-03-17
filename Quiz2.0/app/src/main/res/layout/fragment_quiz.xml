@@ -386,7 +386,7 @@
                 style="?attr/buttonBarPositiveButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/start_again"/>
 
             <android.support.v4.widget.Space
@@ -401,7 +401,7 @@
                 style="?attr/buttonBarPositiveButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/submit"/>
         </android.support.v7.widget.ButtonBarLayout>
     </LinearLayout>

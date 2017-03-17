@@ -63,14 +63,14 @@ public class QuizFragment extends Fragment {
 
     private TextView overlockerThreadsQuestionView;
     private TextView overlockerThreadsAnswerView;
-    private String overlockerThreadsCorrectAnswer = "2";
+    private static final String overlockerThreadsCorrectAnswer = "2";
 
     private TextView bastingQuestionView;
     private RadioButton bastingCorrectAnswer;
     private RadioGroup mBastingRg;
 
     private TextView electricMachineQuestionView;
-    private String electricMachineCorrectAnswer = "singer";
+    private static final String electricMachineCorrectAnswer = "singer";
     private EditText mElectricMachineEditText;
 
     private TextView needle_quantity_view;
@@ -350,8 +350,7 @@ public class QuizFragment extends Fragment {
      * This method updates the displayed needle count
      */
     private void displayNeedleCount() {
-
-        overlockerThreadsAnswerView.setText("" + needle_count);
+        overlockerThreadsAnswerView.setText(String.valueOf(needle_count));
     }
 
     /**
