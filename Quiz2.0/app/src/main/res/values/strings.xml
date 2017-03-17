@@ -49,4 +49,12 @@
     <string name="final_greeting">That\'s all the questions!</string>
     <string name="invalid_needle_count">You cannot have less than zero needles</string>
     <string name="tim_gunn_answer">make it work</string>
+
+    <!--Dialog Text-->
+    <string name="save">Save</string>
+    <string name="retry">Retry</string>
+    <plurals name="point">
+        <item quantity="one">point</item>
+        <item quantity="other">points</item>
+    </plurals>
 </resources>

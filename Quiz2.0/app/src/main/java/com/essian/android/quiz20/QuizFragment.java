@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,7 +30,8 @@ import static com.essian.android.quiz20.R.id.treadle;
  */
 public class QuizFragment extends Fragment {
 
-    static final String STATE_NEEDLE_COUNT = "needleCount";
+    private static final String DIALOG_SCORE = "DialogScore";
+    private final String STATE_NEEDLE_COUNT = "needleCount";
     int needle_count = 0;
     int score = 0;
 
@@ -185,6 +186,7 @@ public class QuizFragment extends Fragment {
                 reset();
             }
         });
+        mNameEditText.requestFocus();
         return v;
     }
 
@@ -227,11 +229,7 @@ public class QuizFragment extends Fragment {
      * This method restarts the fragment resulting in the answers and scores being reset
      */
     public void reset() {
-//        QuizFragment quiz = (QuizFragment) getFragmentManager().findFragmentById(R.id.fragment_container);
-//        getFragmentManager().beginTransaction()
-//                .detach(quiz)
-//                .attach(quiz)
-//                .commit();
+        mNameEditText.requestFocus();
         mNameEditText.setText("");
         mElectricMachineEditText.setText("");
         mTimGunnEditText.setText("");
@@ -254,7 +252,7 @@ public class QuizFragment extends Fragment {
                 }
             }
         }
-        mNameEditText.requestFocus();
+
     }
 
 
@@ -263,8 +261,8 @@ public class QuizFragment extends Fragment {
      */
     public void score() {
         if (getName() == null || getName().isEmpty()) {
-            Toast.makeText(getActivity(), "Please enter your name", Toast.LENGTH_SHORT).show();
             mNameEditText.requestFocus();
+            Toast.makeText(getActivity(), "Please enter your name", Toast.LENGTH_SHORT).show();
             return;
         }
         scoreQuestionOverlockerThreads();
@@ -360,12 +358,15 @@ public class QuizFragment extends Fragment {
      * This method displays the users score in a toast message
      */
     private void displayScore() {
-        String message = "You scored " + score;
-        message += " out of 7";
-        message += "\nWell done " + mName + "!";
-        Toast toast = Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
+//        String message = "You scored " + score;
+//        message += " out of 7";
+//        message += "\nWell done " + mName + "!";
+//        Toast toast = Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
+//        toast.setGravity(Gravity.CENTER, 0, 0);
+//        toast.show();
+        FragmentManager fm = getFragmentManager();
+        DisplayScoreFragment scoreDialog = DisplayScoreFragment.newInstance(score, mName);
+        scoreDialog.show(fm, DIALOG_SCORE);
     }
 
     /**
