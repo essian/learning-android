@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void resetScores(View v) {
+    public void resetScores() {
         player1Score = 0;
         player2Score = 0;
         displayScore(player2Score, 2);

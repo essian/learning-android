@@ -131,7 +131,6 @@ public class QuizFragment extends Fragment {
         mElectricMachineEditText = (EditText) v.findViewById(R.id.electric_machine_answer);
 
         timGunnQuestionView = (TextView) v.findViewById(R.id.timGunn);
-        timGunnCorrectAnswer = getString(R.string.tim_gunn_answer);
         mTimGunnEditText = (EditText) v.findViewById(R.id.tim_gunn_answer);
 
         treadleQuestionView = (TextView) v.findViewById(treadle);
